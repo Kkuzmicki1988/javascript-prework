@@ -1,10 +1,19 @@
-function getMoveName(){
+function getMoveName(argMoveId){    
+  if(argMoveId == 1){
+    return 'kamień';
+  } else if(argMoveId == 2){
+     return 'papier';
+  } else if(argMoveId == 3){
+     return 'nożyce';
+  }
 
- return 
-
+  printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+   return 'nieznany ruch';
 }
 
-
+function displayResult(argComputerMove, argPlayerMove){
+  
+}
 
 
 // Computer move
@@ -37,7 +46,9 @@ let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.
 
 console.log('Gracz wpisał: ' + playerInput);
 
-let playerMove = getMoveName(randomNumber);
+let playerMove = getMoveName(playerInput);
+
+console.log('zwraca ' + playerInput)
 
 /*if(playerInput == '1'){
   playerMove = 'kamień';
