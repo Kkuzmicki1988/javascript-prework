@@ -1,3 +1,4 @@
+{
 function playGame(playerInput){
 clearMessages()
 
@@ -37,40 +38,25 @@ if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
  } 
 }
 
-let randomNumber = Math.floor(Math.random() * 3 + 1);
-
-console.log('Wylosowana liczba to: ' + randomNumber);
-
-let argComputerMove = getMoveName(randomNumber);
+const randomNumber =
+ Math.floor(Math.random() * 3 + 1);
+ argComputerMove =  getMoveName(randomNumber);
+ argPlayerMove =  getMoveName(playerInput);
 
 printMessage('Mój ruch to: ' + argComputerMove);
-
-console.log('Gracz wpisał: ' + playerInput);
-
-let argPlayerMove = getMoveName(playerInput);
-
-console.log('zwraca ' + playerInput)
-
 printMessage('Twój ruch to: ' + argPlayerMove);
-
-function printMessage(msg){
-	let div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('messages').appendChild(div);
-}
-function clearMessages(){
-	document.getElementById('messages').innerHTML = '';
-}
 printMessage(displayResult(argComputerMove, argPlayerMove));
 
 }
 
 document.getElementById('playRock').addEventListener('click', function(){
   playGame(1);
-});
-document.getElementById('playPaper').addEventListener('click', function(){
+}); 
+ document.getElementById('playPaper').addEventListener('click', function(){
   playGame(2);
 });
-document.getElementById('playScissors').addEventListener('click', function(){
+ document.getElementById('playScissors').addEventListener('click', function(){
   playGame(3);
 });
+
+}
