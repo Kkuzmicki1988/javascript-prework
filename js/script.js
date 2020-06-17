@@ -13,29 +13,16 @@ function getMoveName(argMoveId){
 }
 
 function displayResult(argComputerMove, argPlayerMove){
-
-  if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
-   return 'Ty wygrywasz!';
-} else if (argComputerMove == 'papier' && argPlayerMove == 'papier') {
+  
+if(argComputerMove == 'kamień' && argPlayerMove == 'papier' ||
+   argComputerMove == 'papier' && argPlayerMove == 'nożyce' ||
+   argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
+  return 'Ty wygrywasz!';
+} else if (argComputerMove === argPlayerMove) {
    return 'Remis!';
-} else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
+} else {
    return 'Ty przegrywasz';
-}
-
-if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
-   return 'Ty wygrywasz!';
-} else if (argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
-   return 'Remis!';
-} else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
-   return 'Ty przegrywasz';
-}
-if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
-   return 'Ty wygrywasz!';
-} else if (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
-   return 'Remis!';
-} else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
-   return 'Ty przegrywasz';
- } 
+ }
 }
 
 const randomNumber =
