@@ -11,9 +11,11 @@ const getMoveName = function(argMoveId){
      return 'nożyce';
   }
 }
-
-const displayResult = function(argComputerMove, argPlayerMove){
-  
+const randomNumber = Math.floor(Math.random() * 3 + 1),
+ argComputerMove =  getMoveName(randomNumber),
+ argPlayerMove =  getMoveName(playerInput),
+ displayResult = function(argComputerMove, argPlayerMove){
+ 
 if(argComputerMove == 'kamień' && argPlayerMove == 'papier' ||
    argComputerMove == 'papier' && argPlayerMove == 'nożyce' ||
    argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
@@ -24,11 +26,7 @@ if(argComputerMove == 'kamień' && argPlayerMove == 'papier' ||
    return 'Ty przegrywasz';
  }
 }
-
-const randomNumber = Math.floor(Math.random() * 3 + 1),
- argComputerMove =  getMoveName(randomNumber),
- argPlayerMove =  getMoveName(playerInput);
-
+  
 printMessage('Mój ruch to: ' + argComputerMove);
 printMessage('Twój ruch to: ' + argPlayerMove);
 printMessage(displayResult(argComputerMove, argPlayerMove));
